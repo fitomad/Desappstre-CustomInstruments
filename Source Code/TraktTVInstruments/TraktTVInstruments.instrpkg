@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<package>
+    <!--  Información del Instrument -->
+	<id>com.desappstre.TraktTVInstruments</id>
+	<title>TraktTV API</title>
+	<owner>
+		<name>Adolfo</name>
+	</owner>
+    
+    <!-- Search Shows -->
+    <os-signpost-interval-schema>
+        <id>trakttv-signpost</id>
+        <title>Signpost cliente Trakt.TV</title>
+        
+        <subsystem>"com.desappstre.CoreTraktTV./instruments"</subsystem>
+        <category>"TV Shows"</category>
+        <name>"Search Show"</name>
+        
+        <start-pattern>
+            <message>"Buscando Shows con el nombre "?show-name</message>
+        </start-pattern>
+        <end-pattern>
+            <message>"Shows recuperados "?shows-count". Tamaño de la descarga "?shows-size" bytes"</message>
+        </end-pattern>
+        
+        <column>
+            <mnemonic>show-name</mnemonic>
+            <title>Search Term</title>
+            <type>string</type>
+            <expression>?show-name</expression>
+        </column>
+        <column>
+            <mnemonic>shows-count</mnemonic>
+            <title>Shows Found</title>
+            <type>string</type>
+            <expression>?shows-count</expression>
+        </column>
+        <column>
+            <mnemonic>shows-size</mnemonic>
+            <title>Response Bytes Size</title>
+            <type>string</type>
+            <expression>?shows-size</expression>
+        </column>
+    </os-signpost-interval-schema>
+    
+    <instrument>
+        <id>com.desappstre.CoreTraktTV.Instrument</id>
+        <title>Operaciones Trakt.TV</title>
+        <category>Behavior</category>
+        <purpose>Mostrar las operaciones con el servicio Trakt.TV</purpose>
+        <icon>Generic</icon>
+        
+        <create-table>
+            <id>coretrakttv-table</id>
+            <schema-ref>trakttv-signpost</schema-ref>
+        </create-table>
+        
+        <graph>
+            <title>Gráfico</title>
+            <lane>
+                <title>TV Shows Search</title>
+                <table-ref>coretrakttv-table</table-ref>
+                
+                <!-- plot, plot-template or histogram elements -->
+                <plot-template>
+                    <instance-by>show-name</instance-by>
+                    <value-from>duration</value-from>
+                </plot-template>
+            </lane>
+        </graph>
+        <!-- Define at least one detail view for your Instrument -->
+        <list>
+            <title>Lista</title>
+            <table-ref>coretrakttv-table</table-ref>
+            <column>show-name</column>
+            <column>duration</column>
+            <column>shows-count</column>
+            <column>shows-size</column>
+        </list>
+    </instrument>
+</package>

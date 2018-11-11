@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o3V-VL-oNN">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="xFk-uf-aEG">
+            <objects>
+                <navigationController id="o3V-VL-oNN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="yv6-NL-zef"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rFe-eV-ZaF">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="68P-uu-yFS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVQ-xb-MzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1" y="-152"/>
+        </scene>
+        <!--Trakt.TV Operations-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="OperationsViewController" id="BYZ-38-t0r" customClass="OperationsViewController" customModule="Desappstre_CustomInstruments" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uES-qT-bsc">
+                                <rect key="frame" x="24" y="112" width="327" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="z1X-8B-6vl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                <state key="normal" title="Trending Shows"/>
+                                <connections>
+                                    <action selector="handleTrendingButtonTapWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xkd-KH-h75"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbM-5N-2tS">
+                                <rect key="frame" x="24" y="276" width="327" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1ep-1r-d5T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                <state key="normal" title="Popular Shows"/>
+                                <connections>
+                                    <action selector="handlePopularButtonTapWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Efg-fh-muO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQ4-ZJ-Vzu">
+                                <rect key="frame" x="24" y="440" width="327" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vzf-gb-fze"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                <state key="normal" title="Search Shows"/>
+                                <connections>
+                                    <action selector="handleSearchButtonTapWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4vv-K5-6IR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descarga las series más populares de Trakt.TV en este momento" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYc-je-BKF">
+                                <rect key="frame" x="24" y="358" width="327" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Zoe-JQ-D5H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Busca una serie de televisión. Escribe el nombre en la caja de texto y pulsa en el botón" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AP-x7-Nnn">
+                                <rect key="frame" x="24" y="589" width="327" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NTk-62-Nb1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xd7-pG-XFo">
+                                <rect key="frame" x="0.0" y="671" width="375" height="141"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todas las operaciones se ven reflejadas o bien en Consola o en Instruments." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTQ-na-hgP">
+                                        <rect key="frame" x="32" y="16" width="311" height="109"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="xTQ-na-hgP" firstAttribute="top" secondItem="Xd7-pG-XFo" secondAttribute="top" constant="16" id="45y-Sb-RCS"/>
+                                    <constraint firstAttribute="bottom" secondItem="xTQ-na-hgP" secondAttribute="bottom" constant="16" id="89E-dH-Fub"/>
+                                    <constraint firstItem="xTQ-na-hgP" firstAttribute="leading" secondItem="Xd7-pG-XFo" secondAttribute="leading" constant="32" id="SIl-xl-m0Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="xTQ-na-hgP" secondAttribute="trailing" constant="32" id="TSh-sS-kah"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obtiene una lista de las series de televición que son tendencia en este momento." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhh-PM-DW7">
+                                <rect key="frame" x="24" y="194" width="327" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7DI-bs-IpA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="¿Qué serie estás buscando?" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="iOc-f3-KqZ">
+                                <rect key="frame" x="24" y="522" width="327" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Flj-gd-gsI"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PbM-5N-2tS" firstAttribute="leading" secondItem="Qow-gd-XHz" secondAttribute="leading" constant="24" id="10x-Sb-5Du"/>
+                            <constraint firstItem="Qow-gd-XHz" firstAttribute="trailing" secondItem="AQ4-ZJ-Vzu" secondAttribute="trailing" constant="24" id="2zz-M2-uAV"/>
+                            <constraint firstItem="Xd7-pG-XFo" firstAttribute="leading" secondItem="Qow-gd-XHz" secondAttribute="leading" id="8YZ-JO-rWP"/>
+                            <constraint firstItem="Qow-gd-XHz" firstAttribute="trailing" secondItem="uES-qT-bsc" secondAttribute="trailing" constant="24" id="9cD-Lw-GTt"/>
+                            <constraint firstItem="uES-qT-bsc" firstAttribute="top" secondItem="Qow-gd-XHz" secondAttribute="top" constant="24" id="AQM-bu-qhK"/>
+                            <constraint firstItem="iOc-f3-KqZ" firstAttribute="leading" secondItem="Qow-gd-XHz" secondAttribute="leading" constant="24" id="BYk-uN-gUJ"/>
+                            <constraint firstItem="6AP-x7-Nnn" firstAttribute="leading" secondItem="Qow-gd-XHz" secondAttribute="leading" constant="24" id="C8r-Gt-7a8"/>
+                            <constraint firstItem="Qow-gd-XHz" firstAttribute="trailing" secondItem="Qhh-PM-DW7" secondAttribute="trailing" constant="24" id="DZK-vd-cJK"/>
+                            <constraint firstItem="Qhh-PM-DW7" firstAttribute="leading" secondItem="Qow-gd-XHz" secondAttribute="leading" constant="24" id="EnJ-u6-ucs"/>
+                            <constraint firstItem="AQ4-ZJ-Vzu" firstAttribute="top" secondItem="kYc-je-BKF" secondAttribute="bottom" constant="32" id="IEQ-N5-coe"/>
+                            <constraint firstItem="AQ4-ZJ-Vzu" firstAttribute="leading" secondItem="Qow-gd-XHz" secondAttribute="leading" constant="24" id="IXo-Px-8MV"/>
+                            <constraint firstItem="6AP-x7-Nnn" firstAttribute="top" secondItem="iOc-f3-KqZ" secondAttribute="bottom" constant="32" id="Iie-s1-5X5"/>
+                            <constraint firstItem="Qow-gd-XHz" firstAttribute="trailing" secondItem="PbM-5N-2tS" secondAttribute="trailing" constant="24" id="NGA-pO-2B7"/>
+                            <constraint firstItem="Qow-gd-XHz" firstAttribute="trailing" secondItem="Xd7-pG-XFo" secondAttribute="trailing" id="ZWt-IZ-KOm"/>
+                            <constraint firstItem="kYc-je-BKF" firstAttribute="top" secondItem="PbM-5N-2tS" secondAttribute="bottom" constant="32" id="ew5-e1-8Mf"/>
+                            <constraint firstItem="Qow-gd-XHz" firstAttribute="trailing" secondItem="kYc-je-BKF" secondAttribute="trailing" constant="24" id="hDC-XA-SX1"/>
+                            <constraint firstAttribute="bottom" secondItem="Xd7-pG-XFo" secondAttribute="bottom" id="j9g-66-iqe"/>
+                            <constraint firstItem="Qow-gd-XHz" firstAttribute="trailing" secondItem="iOc-f3-KqZ" secondAttribute="trailing" constant="24" id="jr4-P3-tNZ"/>
+                            <constraint firstItem="kYc-je-BKF" firstAttribute="leading" secondItem="Qow-gd-XHz" secondAttribute="leading" constant="24" id="kve-gZ-bVe"/>
+                            <constraint firstItem="Xd7-pG-XFo" firstAttribute="top" secondItem="6AP-x7-Nnn" secondAttribute="bottom" constant="32" id="lrW-rn-JSl"/>
+                            <constraint firstItem="uES-qT-bsc" firstAttribute="leading" secondItem="Qow-gd-XHz" secondAttribute="leading" constant="24" id="qS4-Lj-Vkv"/>
+                            <constraint firstItem="iOc-f3-KqZ" firstAttribute="top" secondItem="AQ4-ZJ-Vzu" secondAttribute="bottom" constant="32" id="sMj-pu-9gV"/>
+                            <constraint firstItem="Qow-gd-XHz" firstAttribute="trailing" secondItem="6AP-x7-Nnn" secondAttribute="trailing" constant="24" id="xPF-I8-uqk"/>
+                            <constraint firstItem="Qhh-PM-DW7" firstAttribute="top" secondItem="uES-qT-bsc" secondAttribute="bottom" constant="32" id="yBi-7Z-Yfb"/>
+                            <constraint firstItem="PbM-5N-2tS" firstAttribute="top" secondItem="Qhh-PM-DW7" secondAttribute="bottom" constant="32" id="zDX-H4-wba"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qow-gd-XHz"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Trakt.TV Operations" id="KIW-zx-4Wm"/>
+                    <connections>
+                        <outlet property="buttonPopular" destination="PbM-5N-2tS" id="nNG-mD-fIU"/>
+                        <outlet property="buttonSearch" destination="AQ4-ZJ-Vzu" id="vou-j0-mI3"/>
+                        <outlet property="buttonTrending" destination="uES-qT-bsc" id="ITn-9G-58z"/>
+                        <outlet property="textfieldSearch" destination="iOc-f3-KqZ" id="08t-C2-AD9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2" y="599"/>
+        </scene>
+    </scenes>
+</document>
